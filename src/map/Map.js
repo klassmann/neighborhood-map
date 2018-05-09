@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { customMapStyle } from './MapStyle';
 
 
 export class Map extends React.Component {
@@ -42,6 +43,7 @@ export class Map extends React.Component {
             const mapConfig = Object.assign({}, {
                 center: center,
                 zoom: zoom,
+                styles: customMapStyle,
                 mapTypeControl: false,
                 streetViewControl: false,
                 fullscreenControl: false,
