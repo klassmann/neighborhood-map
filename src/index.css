@@ -62,7 +62,7 @@ body {
 /* Sidebar */
 
 .side-bar {
-    background-color: rgba( 255, 255, 255, 1);
+    background-color: #fdfcf8;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -76,7 +76,6 @@ body {
 .title {
     user-select: none;
     cursor: pointer;
-    background-color: #ffffff;
     padding: 20px;
     font-size: 1.7em;
     color: #69448E;
@@ -86,15 +85,15 @@ body {
 .help {
     padding: 0 20px 20px 20px;
     font-size: 1.1em;
-    color: #999999;
+    color: #ae9e90;
 }
 
 
 .toolbar-title {
     padding: 20px 20px 5px 5px;
     font-size: 1.2em;
-    color: #aaaaaa;
-    border-bottom: 1px solid #eeeeee;
+    color: #ae9e90;
+    border-bottom: 1px solid #ae9e90;
 }
 
 /* Toggle Button */
@@ -102,7 +101,6 @@ body {
 .toggle {
     user-select: none;
     cursor: pointer;
-    background-color: #ffffff;
     padding: 15px;
     color: #333333;
 }

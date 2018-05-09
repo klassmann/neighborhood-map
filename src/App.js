@@ -47,15 +47,23 @@ class App extends Component {
     this.setState({ places: places });
   }
 
-  updatePlacesByCategories() {
+  getPlacesByCategory() {
     if (this.state.filterCategories.length === 0) {
-      this.setState({ places: PLACES });
-      return;
+      return PLACES;
     }
 
     let places = PLACES.filter((item) => {
       return this.state.filterCategories.includes(item.type);
     });
+
+    return places;
+  }
+
+  updatePlacesByCategories() {
+    this.setState({
+      filterPlaces: []
+    });
+    let places = this.getPlacesByCategory();
     this.setState({ places: places });
   }
 
@@ -66,7 +74,7 @@ class App extends Component {
   }
 
   removePlaceFromFilter(value) {
-    var currentFilter = this.state.filterCategories;
+    var currentFilter = this.state.filterPlaces;
     this.setState({
       filterPlaces: currentFilter.filter((item) => {
         return item !== value;
@@ -108,12 +116,12 @@ class App extends Component {
   }
 
   renderPlacesFilter() {
-    return PLACES.map((item, index) => {
+    return this.getPlacesByCategory().map((item, index) => {
       return <ToggleButton
-        key={index}
+        key={item.key}
         onToggleOn={this.onPlaceToggleOn} 
         onToggleOff={this.onPlaceToggleOff} 
-        id={item.key} 
+        id={item.key}
         icon={item.icon} 
         text={item.title} />
     });
@@ -122,7 +130,7 @@ class App extends Component {
   renderCategoriesFilter() {
     return PlaceCategories.map((item, index) => {
       return <ToggleButton
-        key={index}
+        key={item.id}
         onToggleOn={this.onCategoryToggleOn} 
         onToggleOff={this.onCategoryToggleOff} 
         id={item.id} 
@@ -140,10 +148,10 @@ class App extends Component {
           <div class="help">
             You can filter by a <b>Category</b> or by <b>Place</b> name.
           </div>
-          <div class="toolbar-title">Places</div>
-          {this.renderPlacesFilter()}
           <div class="toolbar-title">Categories</div>
           {this.renderCategoriesFilter()}
+          <div class="toolbar-title">Places</div>
+          {this.renderPlacesFilter()}
         </div>
       </div>
     );
