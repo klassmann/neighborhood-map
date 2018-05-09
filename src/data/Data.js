@@ -2,6 +2,7 @@
 
 import { Place } from './Place';
 
+
 export const PLACES = [
     new Place('1', 'Koreana Restaurant', 45.4130133, -75.7040369, 'restaurant'),
     new Place('2', 'Korean Palace Restaurant', 45.4121026, -75.7039511, 'restaurant'),

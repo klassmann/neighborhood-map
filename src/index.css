@@ -69,7 +69,6 @@ body {
     height: 100%;
     width: 17%;
     overflow-x: scroll;
-    overflow-y: hidden;
     box-shadow: 1px 1px 1px rgba(1,1,1,0.2);
 }
 
@@ -104,7 +103,7 @@ body {
     user-select: none;
     cursor: pointer;
     background-color: #ffffff;
-    padding: 20px;
+    padding: 15px;
     color: #333333;
 }
 

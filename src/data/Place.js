@@ -7,6 +7,7 @@ export class Place {
         this.lat = lat;
         this.lng = lng;
         this.type = type;
+        this.icon = 'fa-map-marker-alt';
     }
 }
 

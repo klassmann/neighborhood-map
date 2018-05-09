@@ -12,59 +12,119 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.onToggleOn = this.onToggleOn.bind(this);
-    this.onToggleOff = this.onToggleOff.bind(this);
-    this.state = { searchValue: '', places: PLACES, filterValues: [] };
+    this.onCategoryToggleOn = this.onCategoryToggleOn.bind(this);
+    this.onCategoryToggleOff = this.onCategoryToggleOff.bind(this);
+    this.onPlaceToggleOn = this.onPlaceToggleOn.bind(this);
+    this.onPlaceToggleOff = this.onPlaceToggleOff.bind(this);
+
+    this.state = { 
+      searchValue: '',
+      places: PLACES,
+      filterPlaces: [],
+      filterCategories: []
+    };
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.filterValues.length !== this.state.filterValues.length) {
-      this.updatePlaces();
+    if (prevState.filterCategories.length !== this.state.filterCategories.length) {
+      this.updatePlacesByCategories();
+    }
+
+    if (prevState.filterPlaces.length !== this.state.filterPlaces.length) {
+      this.updatePlacesByPlaces();
     }
   }
 
-  updatePlaces() {
-    if (this.state.filterValues.length === 0) {
+  updatePlacesByPlaces() {
+    if (this.state.filterPlaces.length === 0) {
       this.setState({ places: PLACES });
       return;
     }
 
     let places = PLACES.filter((item) => {
-      return this.state.filterValues.includes(item.type);
+      return this.state.filterPlaces.includes(item.key);
     });
     this.setState({ places: places });
   }
 
-  addToFilter(value) {
-    var values = this.state.filterValues;
-    values.push(value);
-    this.setState({filterValues: values});
+  updatePlacesByCategories() {
+    if (this.state.filterCategories.length === 0) {
+      this.setState({ places: PLACES });
+      return;
+    }
+
+    let places = PLACES.filter((item) => {
+      return this.state.filterCategories.includes(item.type);
+    });
+    this.setState({ places: places });
   }
 
-  removeFromFilter(value) {
-    var values = this.state.filterValues;
+  addPlaceToFilter(value) {
+    var currentFilter = this.state.filterPlaces;
+    currentFilter.push(value);
+    this.setState({ filterPlaces: currentFilter });
+  }
+
+  removePlaceFromFilter(value) {
+    var currentFilter = this.state.filterCategories;
     this.setState({
-      filterValues: values.filter((item) => {
+      filterPlaces: currentFilter.filter((item) => {
         return item !== value;
       })
     });
   }
 
-  onToggleOn(value) {
-    this.addToFilter(value);
-    this.updatePlaces();
+  addCategoryToFilter(value) {
+    var currentFilter = this.state.filterCategories;
+    currentFilter.push(value);
+    this.setState({ filterCategories: currentFilter });
   }
 
-  onToggleOff(value) {
-    this.removeFromFilter(value);
+  removeCategoryFromFilter(value) {
+    var currentFilter = this.state.filterCategories;
+    this.setState({
+      filterCategories: currentFilter.filter((item) => {
+        return item !== value;
+      })
+    });
   }
 
-  renderCategories() {
+  onPlaceToggleOn(value) {
+    this.addPlaceToFilter(value);
+    this.updatePlacesByPlaces();
+  }
+
+  onPlaceToggleOff(value) {
+    this.removePlaceFromFilter(value);
+  }
+
+  onCategoryToggleOn(value) {
+    this.addCategoryToFilter(value);
+    this.updatePlacesByCategories();
+  }
+
+  onCategoryToggleOff(value) {
+    this.removeCategoryFromFilter(value);
+  }
+
+  renderPlacesFilter() {
+    return PLACES.map((item, index) => {
+      return <ToggleButton
+        key={index}
+        onToggleOn={this.onPlaceToggleOn} 
+        onToggleOff={this.onPlaceToggleOff} 
+        id={item.key} 
+        icon={item.icon} 
+        text={item.title} />
+    });
+  }
+
+  renderCategoriesFilter() {
     return PlaceCategories.map((item, index) => {
       return <ToggleButton
         key={index}
-        onToggleOn={this.onToggleOn} 
-        onToggleOff={this.onToggleOff} 
+        onToggleOn={this.onCategoryToggleOn} 
+        onToggleOff={this.onCategoryToggleOff} 
         id={item.id} 
         icon={item.icon} 
         text={item.title} />
@@ -81,9 +141,9 @@ class App extends Component {
             You can filter by a <b>Category</b> or by <b>Place</b> name.
           </div>
           <div class="toolbar-title">Places</div>
-          {this.renderCategories()}
+          {this.renderPlacesFilter()}
           <div class="toolbar-title">Categories</div>
-          {this.renderCategories()}
+          {this.renderCategoriesFilter()}
         </div>
       </div>
     );
