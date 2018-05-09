@@ -76,7 +76,14 @@ class App extends Component {
       <div>
         <MapContainer places={this.state.places} />
         <div className="side-bar">
-        {this.renderCategories()}
+          <h3 class="title">Neighborhood Map</h3>
+          <div class="help">
+            You can filter by a <b>Category</b> or by <b>Place</b> name.
+          </div>
+          <div class="toolbar-title">Places</div>
+          {this.renderCategories()}
+          <div class="toolbar-title">Categories</div>
+          {this.renderCategories()}
         </div>
       </div>
     );

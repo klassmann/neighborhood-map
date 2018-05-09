@@ -1,111 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+
+
 body {
     margin: 0;
     padding: 0;
-  }
-  
-  
-  /* Loading Animation */
-  
-  .container-loading {
+}
+
+
+/* Loading Animation */
+
+.container-loading {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     padding: 0;
     margin: 0;
-  }
-  
-  .loading-text {
+}
+
+.loading-text {
     width: 64px;
-  }
-  
-  .lds-facebook {
+}
+
+.lds-facebook {
     display: block;
     position: relative;
     width: 64px;
     height: 64px;
-  }
-  .lds-facebook div {
+}
+.lds-facebook div {
     display: inline-block;
     position: absolute;
     left: 6px;
     width: 13px;
     background: cornflowerblue;
     animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-  }
-  .lds-facebook div:nth-child(1) {
+}
+.lds-facebook div:nth-child(1) {
     left: 6px;
     animation-delay: -0.24s;
-  }
-  .lds-facebook div:nth-child(2) {
+}
+.lds-facebook div:nth-child(2) {
     left: 26px;
     animation-delay: -0.12s;
-  }
-  .lds-facebook div:nth-child(3) {
+}
+.lds-facebook div:nth-child(3) {
     left: 45px;
     animation-delay: 0;
-  }
-  @keyframes lds-facebook {
+}
+@keyframes lds-facebook {
     0% {
-      top: 6px;
-      height: 51px;
+        top: 6px;
+        height: 51px;
     }
     50%, 100% {
-      top: 19px;
-      height: 26px;
+        top: 19px;
+        height: 26px;
     }
-  }
-  
-  
-  
-  /* Search Box */
-  
-  .search-box {
+}
+
+/* Sidebar */
+
+.side-bar {
+    background-color: rgba( 255, 255, 255, 1);
     position: absolute;
-    top: 80px;
-    left: 10px;
-    padding: 20px;
-    background: #ffffff;
-  }
-  
-  .search-box input {
-    font-size: 1.2em;
-    display: block;
-  }
-  
-  /* Sidebar */
-  
-  .side-bar {
-    background-color: #ffffff;
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 17%;
+    overflow-x: scroll;
+    overflow-y: hidden;
     box-shadow: 1px 1px 1px rgba(1,1,1,0.2);
-  }
-  
-  
-  /* Toggle Button */
-  
-  .toggle {
+}
+
+
+.title {
     user-select: none;
     cursor: pointer;
     background-color: #ffffff;
     padding: 20px;
-    border: 1px solid #cccccc;
-    border-bottom: none;
-  }
-  
-  .toggle:last-child {
-    border-bottom: 1px solid #cccccc;
-  }
-  
-  .toggle-off {
+    font-size: 1.7em;
+    color: #69448E;
+    font-family: 'Bungee', cursive;
+}
+
+.help {
+    padding: 0 20px 20px 20px;
+    font-size: 1.1em;
+    color: #999999;
+}
+
+
+.toolbar-title {
+    padding: 20px 20px 5px 5px;
+    font-size: 1.2em;
+    color: #aaaaaa;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* Toggle Button */
+
+.toggle {
+    user-select: none;
+    cursor: pointer;
     background-color: #ffffff;
-    color: gray;
-  }
-  
-  .toggle-on {
-    background-color: #eeeeee;
-    color: #000000;
-    box-shadow: 0px 0px 3px rgba(1,1,1,0.5) inset;
-  }
+    padding: 20px;
+    color: #333333;
+}
+
+.toggle:last-child { }
+
+.toggle-off {
+    /* background-color: #ffffff; */
+    color: #333333;
+}
+
+.toggle-on {
+    background-color: #69448E;
+    color: #ffffff;
+    /* box-shadow: 0px 0px 3px rgba(1,1,1,0.5) inset; */
+}
