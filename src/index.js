@@ -2,10 +2,13 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import './responsive.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+
+import './css/variables.css';
+import './css/index.css';
+import './css/sidebar.css';
+import './css/loading.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

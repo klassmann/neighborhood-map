@@ -148,9 +148,9 @@ class App extends Component {
 
   sideBarStatus() {
     if (this.state.showSideBar) {
-      return "side-bar";
+      return "sb opened";
     }
-    return "side-bar side-bar-closed";
+    return "sb closed";
   }
 
   render() {
@@ -158,16 +158,16 @@ class App extends Component {
       <div>
         <MapContainer places={this.state.places} />
         <div className={this.sideBarStatus()}>
-          <div onClick={() => {this.toggleSidebar()}} class="side-bar-toggle">
+          <div onClick={() => {this.toggleSidebar()}} className="sb-menu">
             <i class="fas fa-bars"></i>
           </div>
-          <h3 className="app-title">Neighborhood Map</h3>
-          <div className="help">
+          <h3 className="sb-app-title">Neighborhood Map</h3>
+          <div className="sb-help">
             You can filter by a <b>Category</b> or by <b>Place</b> name.
           </div>
-          <div className="toolbar-title">Categories</div>
+          <div className="sb-caption">Categories</div>
           {this.renderCategoriesFilter()}
-          <div className="toolbar-title">Places</div>
+          <div className="sb-caption">Places</div>
           {this.renderPlacesFilter()}
         </div>
       </div>
