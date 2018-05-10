@@ -57,6 +57,10 @@
     cursor: pointer;
     padding: 15px;
     color: #333333;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
 }
 
 .sb-toggle.off {
@@ -75,11 +79,11 @@
 */
 .sb-menu {
     position: absolute; 
-    top: 10px;
-    right: 15px;
+    top: 15px;
+    padding: 5px;
+    right: 12px;
     width: 30px;
     height: 15px;
-    margin: 10px auto;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -89,6 +93,9 @@
     -o-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
     cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
 .sb-menu span {
@@ -108,7 +115,12 @@
     -moz-transition: .25s ease-in-out;
     -o-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
+
 
 
 .sb-menu span:nth-child(1) {
