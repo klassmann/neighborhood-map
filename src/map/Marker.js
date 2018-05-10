@@ -1,7 +1,6 @@
 // Author: Lucas Klassmann, <lucasklassmann@gmail.com>
 
 import React from 'react';
-
 import InfoWindow from './InfoWindow';
 
 
@@ -80,8 +79,6 @@ export class Marker extends React.Component {
         );
     }
 }
-
-
 
 
 export default Marker;

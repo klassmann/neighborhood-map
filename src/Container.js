@@ -1,10 +1,8 @@
 // Author: Lucas Klassmann, <lucasklassmann@gmail.com>
 
-import React, { Component } from 'react';
-
+import React from 'react';
 import { Map } from './map/Map';
 import GoogleApiComponent from './utils/GoogleApiComponent';
-
 import Marker from './map/Marker';
 
 export class Container extends React.Component {
@@ -42,4 +40,4 @@ export class Container extends React.Component {
 
 export default GoogleApiComponent({
     apiKey: 'AIzaSyByqKr-2MZzqs92Ax5FhiXbDwq39d7ulog'
-})(Container)
+})(Container);

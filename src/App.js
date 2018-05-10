@@ -5,8 +5,8 @@ import React, { Component } from 'react';
 import MapContainer from './Container';
 import ToggleButton from './ui/ToggleButton';
 
-import { PLACES } from './data/Data'
-import { PlaceCategories } from './data/Data'
+import { PLACES } from './data/Data';
+import { PlaceCategories } from './data/Data';
 
 class App extends Component {
 

@@ -4,10 +4,6 @@ import React from 'react';
 
 export class InfoWindow extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     componentDidUpdate(prevProps, prevState) {
         let {show} = this.props;
 

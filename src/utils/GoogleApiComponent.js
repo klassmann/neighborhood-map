@@ -1,13 +1,11 @@
 // Author: https://github.com/auser
 // https://gist.github.com/auser/1d55aa3897f15d17caf21dc39b85b663#file-googleapicomponent-js
 
-import React, { PropTypes as T } from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import cache from './ScriptCache';
+import GoogleApi from './GoogleApi';
 
-import cache from './ScriptCache'
-import GoogleApi from './GoogleApi'
-
-const defaultMapConfig = {}
+// const defaultMapConfig = {}
 
 export const wrapper = (options) => (WrappedComponent) => {
   const apiKey = options.apiKey;
@@ -25,27 +23,14 @@ export const wrapper = (options) => (WrappedComponent) => {
     }
 
     componentDidMount() {
-      const refs = this.refs;
+      // const refs = this.refs;
       this.scriptCache.google.onLoad((err, tag) => {
-        // const maps = window.google.maps;
-        const props = Object.assign({}, this.props, {
-          loaded: this.state.loaded
-        });
-
-        // const mapRef = refs.map;
-
-        // const node = ReactDOM.findDOMNode(mapRef);
-        // let center = new maps.LatLng(this.props.lat, this.props.lng)
-
-        // let mapConfig = Object.assign({}, defaultMapConfig, {
-        //   center, zoom: this.props.zoom
-        // })
-
-        // this.map = new maps.Map(node, mapConfig);
+        // const props = Object.assign({}, this.props, {
+        //   loaded: this.state.loaded
+        // });
 
         this.setState({
           loaded: true,
-          // map: this.map,
           google: window.google
         })
       });
@@ -63,9 +48,7 @@ export const wrapper = (options) => (WrappedComponent) => {
     render() {
       const props = Object.assign({}, this.props, {
         loaded: this.state.loaded,
-        // map: this.state.map,
         google: this.state.google,
-        // mapComponent: this.refs.map
       })
       return (
         <WrappedComponent {...props} />

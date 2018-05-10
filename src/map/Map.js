@@ -1,6 +1,6 @@
 // Author: Lucas Klassmann, <lucasklassmann@gmail.com>
 
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { customMapStyle } from './MapStyle';
 
@@ -89,3 +89,5 @@ export class Map extends React.Component {
         )
     }
 }
+
+export default Map;
