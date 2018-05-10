@@ -5,10 +5,10 @@ body {
 
     --sb-background: #fdfcf8;
     --sb-caption-color: #ae9e90;
-    --sb-open-width-xxs: 100%;
-    --sb-open-width-xs: 100%;
-    --sb-open-width-sm: 100%;
-    --sb-open-width-md: 100%;
+    --sb-open-width-xxs: 90%;
+    --sb-open-width-xs: 90%;
+    --sb-open-width-sm: 90%;
+    --sb-open-width-md: 90%;
     --sb-open-width-lg: 45%;
     --sb-open-width-xl: 40%;
     --sb-open-width-xxl: 35%;

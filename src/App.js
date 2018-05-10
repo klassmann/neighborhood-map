@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 
 import MapContainer from './Container';
 import ToggleButton from './ui/ToggleButton';
+import SidebarMenu from './ui/SidebarMenu';
 
 import { PLACES } from './data/Data';
 import { PlaceCategories } from './data/Data';
@@ -158,12 +159,10 @@ class App extends Component {
       <div>
         <MapContainer places={this.state.places} />
         <div className={this.sideBarStatus()}>
-          <div onClick={() => {this.toggleSidebar()}} className="sb-menu">
-            <i class="fas fa-bars"></i>
-          </div>
+          <SidebarMenu onClick={() => {this.toggleSidebar()}} />
           <h3 className="sb-app-title">Neighborhood Map</h3>
           <div className="sb-help">
-            You can filter by a <b>Category</b> or by <b>Place</b> name.
+            You can filter by a <b>Category</b> or by <b>Place's</b> name.
           </div>
           <div className="sb-caption">Categories</div>
           {this.renderCategoriesFilter()}
