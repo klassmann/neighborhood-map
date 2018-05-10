@@ -1,0 +1,50 @@
+
+/* Responsive */
+
+@media (max-width: 320px) {
+    .side-bar {
+        width: 100%;
+    }
+}
+
+@media (min-width: 320.01px) and (max-width: 375px) {
+    .side-bar {
+        width: 100%;
+    }
+}
+
+@media (min-width: 375.01px) and (max-width: 425px) {
+    .side-bar {
+        width: 100%;
+    }
+}
+
+@media (min-width: 425.01px) and (max-width: 768px) {
+    .side-bar {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768.01px) and (max-width: 992px) {
+    .side-bar {
+        width: 45%;
+    }
+}
+
+@media (min-width: 992.01px) and (max-width: 1024px) {
+    .side-bar {
+        width: 40%;
+    }    
+}
+
+@media (min-width: 1024.01px) and (max-width: 1440px) {
+    .side-bar {
+        width: 35%;
+    }
+}
+
+@media (min-width: 1440.01px) {
+    .side-bar {
+        width: 23%;
+    }
+}
