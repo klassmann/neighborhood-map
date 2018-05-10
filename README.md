@@ -8,6 +8,7 @@
 - [License](#license)
 
 <a name="about"></a>
+![Screenshot](screenshot.png)
 ## About
 This project shows a map of a neighborhood and its sights that I want to visit. The main goal is build a mashup of google maps and other services, providing a useful map and information about the place.
 
