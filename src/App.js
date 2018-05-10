@@ -20,7 +20,7 @@ class App extends Component {
 
     this.state = { 
       searchValue: '',
-      showSideBar: false,
+      showSideBar: true,
       places: PLACES,
       filterPlaces: [],
       filterCategories: []
@@ -147,20 +147,21 @@ class App extends Component {
     });
   }
 
-  sideBarStatus() {
+  sideBarStatus(cls) {
     if (this.state.showSideBar) {
-      return "sb opened";
+      return cls + " opened";
     }
-    return "sb closed";
+    return cls + " closed";
   }
 
   render() {
     return (
       <div>
-        <MapContainer places={this.state.places} />
-        <div className={this.sideBarStatus()}>
+        <div className={this.sideBarStatus('sb-header')}>
           <SidebarMenu onClick={() => {this.toggleSidebar()}} />
-          <h3 className="sb-app-title">Neighborhood Map</h3>
+          <div className="sb-app-title">Neighborhood Map</div>
+        </div>
+        <div className={this.sideBarStatus('sb-detail')}>
           <div className="sb-help">
             You can filter by a <b>Category</b> or by <b>Place's</b> name.
           </div>
@@ -169,6 +170,7 @@ class App extends Component {
           <div className="sb-caption">Places</div>
           {this.renderPlacesFilter()}
         </div>
+        <MapContainer places={this.state.places} />
       </div>
     );
   }

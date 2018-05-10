@@ -5,6 +5,12 @@ body {
 
     --sb-background: #fdfcf8;
     --sb-caption-color: #ae9e90;
+    --sb-header-width-small: 100%;
+    --sb-header-width-lg: 45%;
+    --sb-header-width-xl: 40%;
+    --sb-header-width-xxl: 35%;
+    --sb-header-width-xxxl: 23%;
+
     --sb-open-width-xxs: 90%;
     --sb-open-width-xs: 90%;
     --sb-open-width-sm: 90%;
