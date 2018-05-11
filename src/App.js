@@ -7,7 +7,7 @@ import ToggleButton from './ui/ToggleButton';
 import SidebarMenu from './ui/SidebarMenu';
 
 import { PLACES } from './data/Data';
-import { PlaceCategories } from './data/Data';
+import { CATEGORIES } from './data/Data';
 
 class App extends Component {
 
@@ -20,7 +20,7 @@ class App extends Component {
 
     this.state = { 
       searchValue: '',
-      showSideBar: true,
+      showSideBar: false,
       places: PLACES,
       filterPlaces: [],
       filterCategories: []
@@ -55,7 +55,7 @@ class App extends Component {
     }
 
     let places = PLACES.filter((item) => {
-      return this.state.filterCategories.includes(item.type);
+      return this.state.filterCategories.includes(item.type.key);
     });
 
     return places;
@@ -130,12 +130,12 @@ class App extends Component {
   }
 
   renderCategoriesFilter() {
-    return PlaceCategories.map((item, index) => {
+    return CATEGORIES.map((item, index) => {
       return <ToggleButton
-        key={item.id}
+        key={item.key}
         onToggleOn={this.onCategoryToggleOn} 
         onToggleOff={this.onCategoryToggleOff} 
-        id={item.id} 
+        id={item.key} 
         icon={item.icon} 
         text={item.title} />
     });

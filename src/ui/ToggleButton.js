@@ -12,12 +12,12 @@ export class ToggleButton extends React.Component {
     handleClick(e) {
         let isToggled = !this.state.toggled;
         this.setState({
-        toggled: isToggled
+            toggled: isToggled
         });
         if (isToggled) {
-        this.props.onToggleOn(this.props.id);
+            this.props.onToggleOn(this.props.id);
         } else {
-        this.props.onToggleOff(this.props.id);
+            this.props.onToggleOff(this.props.id);
         }
     }
 
