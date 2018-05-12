@@ -9,7 +9,12 @@ export class Container extends React.Component {
 
     renderMarkers() {
         return this.props.places.map((item, index) => {
-            return <Marker key={item.key} title={item.title} lat={item.lat} lng={item.lng} />
+            return <Marker 
+                key={item.key} 
+                title={item.title} 
+                lat={item.lat} 
+                lng={item.lng}
+                place={item} />
         });
     }
 

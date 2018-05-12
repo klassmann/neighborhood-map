@@ -38,10 +38,10 @@ export class Marker extends React.Component {
     }
 
     renderMarker() {
-        let {google} = this.props;
-        let {map} = this.props;
-        let {lat} = this.props;
-        let {lng} = this.props;
+        let { google } = this.props;
+        let { map } = this.props;
+        let { lat } = this.props;
+        let { lng } = this.props;
 
         let position = new google.maps.LatLng(lat, lng);
 
@@ -74,6 +74,7 @@ export class Marker extends React.Component {
                     google={this.props.google}
                     map={this.props.map}
                     show={this.state.showInfoWindow}
+                    place={this.props.place}
                     />
             </div>
         );
