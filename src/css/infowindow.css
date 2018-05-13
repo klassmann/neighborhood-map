@@ -1,0 +1,58 @@
+
+.iw-container {
+    overflow: hidden;
+}
+
+.iw-title {
+    color: #333333;
+    font-size: 2.1em;
+}
+
+.iw-photo {
+    float: right;
+    width: 200px;
+    margin-left: 5px;
+}
+
+.iw-description {
+    float: left;
+    font-size: 1.3em;
+    width: 100%;
+    text-align: justify;
+}
+
+.iw-social {
+    display: block;
+    padding-bottom: 20px;
+    bottom: 0;
+}
+
+.iw-social a {
+    text-decoration: none;
+}
+
+.iw-social a i {
+    font-size: 2.5em;
+}
+
+.iw-facebook {
+    color: #3B5998;
+}
+
+.iw-instagram {
+    color: #cd486b;
+}
+
+.iw-twitter {
+    color: #1DA1F2;
+}
+
+.iw-website {
+    color: cornflowerblue;
+}
+
+.iw-powered {
+    border-top: 1px solid #eeeeee;
+    color: #333333;
+    padding-top: 10px;
+}

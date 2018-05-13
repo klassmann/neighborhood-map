@@ -8,6 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 import './css/variables.css';
 import './css/index.css';
 import './css/sidebar.css';
+import './css/infowindow.css';
 import './css/loading.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));

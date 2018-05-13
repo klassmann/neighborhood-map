@@ -94,42 +94,59 @@ export class InfoWindow extends React.Component {
         let { photo } = this.state;
 
 
+        var facebookTemplate = "";
+        var instagramTemplate = "";
+        var twitterTemplate = "";
+        var websiteTemplate = "";
+
         var template = `
-            <h2>${title}</h2>
+            <h2 class="iw-title">${title}</h2>
         `;
 
-        if (photo) {
-            template += `<img style="width: 200px;" src="${photo}" />`;
-        }
+        // if (photo) {
+        //     template += ``;
+        // }
 
         if (description) {
-            template += `<p>${description}</p>`;
+            template += `<p class="iw-description"><img title="${title}" class="iw-photo" src="${photo}" />${description}</p>`;
         }
 
         if (facebook) {
-            template += `<a target="_blank" href="https://fb.com/${facebook}"><i class="fab fa-facebook-square"></i></a>`;
+            facebookTemplate = `<a title="Facebook" class="iw-facebook" target="_blank" href="https://fb.com/${facebook}"><i class="fab fa-facebook-square"></i></a>`;
         }
 
         if (instagram) {
-            template += `<a target="_blank" href="https://instagram.com/${instagram}"><i class="fab fa-instagram"></i></a>`;
+            instagramTemplate = `<a title="Instagram" clas="iw-instagram" target="_blank" href="https://instagram.com/${instagram}"><i class="fab fa-instagram"></i></a>`;
         }
 
         if (twitter) {
-            template += `<a target="_blank" href="https://twitter.com/${twitter}"><i class="fab fa-twitter"></i></a>`;
+            twitterTemplate = `<a title="Twitter" class="iw-twitter" target="_blank" href="https://twitter.com/${twitter}"><i class="fab fa-twitter"></i></a>`;
         }
 
         if (url) {
-            template += `<p>Website: <a target="_blank" href="${url}">${url}</a></p>`;
+            websiteTemplate = `<a title="Website" class="iw-website" target="_blank" href="${url}"><i class="fas fa-globe"></i></a>`;
         }
 
+        var socialContainer = `
+            <div class="iw-social">
+                ${facebookTemplate}
+                ${instagramTemplate}
+                ${twitterTemplate}
+                ${websiteTemplate}
+            </div>
+        `;
+
+        template += socialContainer;
+
         var templateContainer = `
-        <div style="width: 300px;">
+        <div class="iw-container">
             ${template}
+            <p class="iw-powered">Powered by <a target="_blank" href="https://foursquare.com/">Foursquare</a>.</p>
         </div>
         `;
 
         this.infowindow = new google.maps.InfoWindow({
-            content: template
+            content: templateContainer
         });
     }
 
