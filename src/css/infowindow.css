@@ -1,29 +1,29 @@
 
 .iw-container {
+    width: 300px;
     overflow: hidden;
 }
 
 .iw-title {
     color: #333333;
     font-size: 2.1em;
+    text-align: center;
 }
 
 .iw-photo {
-    float: right;
+    display: block;
+    margin: 15px auto;
     width: 200px;
-    margin-left: 5px;
 }
 
 .iw-description {
-    float: left;
-    font-size: 1.3em;
-    width: 100%;
+    font-size: 1.1em;
+    width: 100%;    
     text-align: justify;
 }
 
 .iw-social {
     display: block;
-    padding-bottom: 20px;
     bottom: 0;
 }
 

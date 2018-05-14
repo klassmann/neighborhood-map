@@ -103,12 +103,12 @@ export class InfoWindow extends React.Component {
             <h2 class="iw-title">${title}</h2>
         `;
 
-        // if (photo) {
-        //     template += ``;
-        // }
+        if (photo) {
+            template += `<img title="${title}" class="iw-photo" src="${photo}" />`;
+        }
 
         if (description) {
-            template += `<p class="iw-description"><img title="${title}" class="iw-photo" src="${photo}" />${description}</p>`;
+            template += `<p class="iw-description">${description}</p>`;
         }
 
         if (facebook) {
