@@ -142,7 +142,8 @@ export class InfoWindow extends React.Component {
         `;
 
         this.infowindow = new google.maps.InfoWindow({
-            content: templateContainer
+            content: templateContainer,
+            maxWidth: 250
         });
     }
 

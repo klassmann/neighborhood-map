@@ -1,19 +1,19 @@
 
 .iw-container {
-    width: 300px;
+    width: 100%;
     overflow: hidden;
 }
 
 .iw-title {
     color: #333333;
-    font-size: 2.1em;
+    font-size: 1.6em;
     text-align: center;
 }
 
 .iw-photo {
     display: block;
     margin: 15px auto;
-    width: 200px;
+    width: 45%;
     padding: 2px;
     outline: 1px solid #aaaaaa;
 
@@ -31,10 +31,14 @@
 }
 
 .iw-social a {
+    width: 45px;
+    display: inline-block;
     text-decoration: none;
+    text-align: center;
 }
 
 .iw-social a i {
+    display: block;
     font-size: 2.5em;
 }
 
@@ -58,4 +62,135 @@
     border-top: 1px solid #eeeeee;
     color: #333333;
     padding-top: 10px;
+    font-size: 0.8em;
+}
+
+
+@media (max-width: 320px) {
+    .iw-container {
+        width: 100%;
+    }
+
+    .iw-title {
+        font-size: 1.3em;
+    }
+
+    .iw-photo {
+        width: 35%;
+    }
+
+    .iw-description {
+        font-size: 0.9em;
+    }
+
+    .iw-social a {
+        border: 1px solid #eeeeee;
+        padding: 5px;
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 320.01px) and (max-width: 375px) {
+    .iw-container {
+        width: 100%;
+    }
+
+    .iw-title {
+        font-size: 1.3em;
+    }
+
+    .iw-photo {
+        width: 35%;
+    }
+
+    .iw-description {
+        font-size: 0.9em;
+    }
+
+    .iw-social a {
+        border: 1px solid #eeeeee;
+        padding: 5px;
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 375.01px) and (max-width: 425px) {
+    .iw-container {
+        width: 100%;
+    }
+
+    .iw-title {
+        font-size: 1.3em;
+    }
+
+    .iw-photo {
+        width: 35%;
+    }
+
+    .iw-description {
+        font-size: 0.9em;
+    }
+
+    .iw-social a {
+        border: 1px solid #eeeeee;
+        padding: 5px;
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 425.01px) and (max-width: 768px) {
+    .iw-container {
+        width: 100%;
+    }
+
+    .iw-title {
+        font-size: 1.3em;
+    }
+
+    .iw-photo {
+        width: 35%;
+    }
+
+    .iw-description {
+        font-size: 0.9em;
+    }
+
+    .iw-social a {
+        border: 1px solid #eeeeee;
+        padding: 5px;
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 768.01px) and (max-width: 992px) {
+
+    .iw-title {
+        font-size: 1.3em;
+    }
+
+    .iw-photo {
+        width: 35%;
+    }
+
+    .iw-description {
+        font-size: 0.9em;
+    }
+
+    .iw-social a {
+        border: 1px solid #eeeeee;
+        padding: 5px;
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 992.01px) and (max-width: 1024px) {
+
+}
+
+@media (min-width: 1024.01px) and (max-width: 1440px) {
+
+}
+
+@media (min-width: 1440.01px) {
+
 }
