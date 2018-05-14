@@ -9,6 +9,7 @@ export class Map extends React.Component {
 
     constructor(props) {
         super(props);
+        this.map = null;
 
         if (!props.hasOwnProperty('google')) {
             throw new Error('You must include a `google` prop.');
@@ -28,16 +29,16 @@ export class Map extends React.Component {
     loadMap() {
 
         if (this.props && this.props.google) {
-            const {google} = this.props;
-            const {centerMap} = this.props;
+            const { google } = this.props;
+            const { centerMap } = this.props;
             const maps = google.maps;
 
             const mapRef = this.refs.map;
             const node = ReactDOM.findDOMNode(mapRef);
 
             let zoom = 14;
-            let {lat} = centerMap;
-            let {lng} = centerMap;
+            let { lat } = centerMap;
+            let { lng } = centerMap;
 
             const center = new maps.LatLng(lat, lng);
             const mapConfig = Object.assign({}, {

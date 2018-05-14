@@ -18,10 +18,7 @@ export class InfoWindow extends React.Component {
 
     componentDidMount() {
         let { place } = this.props;
-        // let resp = place.getDetail();
-        // console.log(resp);
         place.getDetail().then((response) => {
-            console.log(response);
             let venue = response.response.venue;
 
             let { name } = venue;
@@ -57,7 +54,7 @@ export class InfoWindow extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         let { show } = this.props;
-        let { place } = this.props;
+        // let { place } = this.props;
 
         if (prevProps.marker !== this.props.marker) {
             this.renderInfoWindow();
@@ -89,10 +86,9 @@ export class InfoWindow extends React.Component {
         let { facebook } = this.state;
         let { instagram } = this.state;
         let { url } = this.state;
-        let { phone } = this.state;
-        let { formattedPhone } = this.state;
+        // let { phone } = this.state;
+        // let { formattedPhone } = this.state;
         let { photo } = this.state;
-
 
         var facebookTemplate = "";
         var instagramTemplate = "";

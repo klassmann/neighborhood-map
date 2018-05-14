@@ -16,24 +16,37 @@ export const wrapper = (options) => (WrappedComponent) => {
       super(props, context);
 
       this.state = {
+        tag: 'initial',
+        error: false,
         loaded: false,
         map: null,
         google: null
-      }
+      };
     }
 
     componentDidMount() {
       // const refs = this.refs;
-      this.scriptCache.google.onLoad((err, tag) => {
-        // const props = Object.assign({}, this.props, {
-        //   loaded: this.state.loaded
-        // });
+      let { tag } = this.scriptCache.google;
 
+      if (tag.errored) {
         this.setState({
-          loaded: true,
-          google: window.google
-        })
-      });
+          error: true,
+          google: null
+        });
+      } else {
+        this.scriptCache.google.onLoad((err, tag) => {
+          if (err !== null) {
+            this.setState({
+              error: true
+            });
+          } else {
+            this.setState({
+              loaded: true,
+              google: window.google
+            });
+          }
+        });
+      }
     }
 
     componentWillMount() {
@@ -47,9 +60,12 @@ export const wrapper = (options) => (WrappedComponent) => {
 
     render() {
       const props = Object.assign({}, this.props, {
+        places: this.props.places,
+        error: this.state.error,
         loaded: this.state.loaded,
         google: this.state.google,
       })
+
       return (
         <WrappedComponent {...props} />
       );

@@ -14,6 +14,9 @@
     display: block;
     margin: 15px auto;
     width: 200px;
+    padding: 2px;
+    outline: 1px solid #aaaaaa;
+
 }
 
 .iw-description {

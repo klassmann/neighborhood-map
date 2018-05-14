@@ -23,6 +23,14 @@ export class Container extends React.Component {
             width: '100vw',
             height: '100vh'
         };
+        if (this.props.error) {
+            return (
+                <div className="container-error">
+                    <img className="error-icon" alt="Connection Error" src="error-icon.png" />
+                    <p className="error-message">Error on loading the map.<br />Verify your connection or try another browser.</p>
+                </div>
+            );            
+        }
 
         if (!this.props.loaded) {
             return (
