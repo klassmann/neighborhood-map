@@ -1,4 +1,6 @@
 // Foursquare API Provider
+// Provides the basic methods for accessing the API
+
 
 const URL = 'https://api.foursquare.com/v2/';
 const CLIENT_ID = '2W4RQXDZQKCQPKKZ1TSAU2V5FR5HDCIJ1UWEDIQW5E1MFJGP';

@@ -1,14 +1,13 @@
 
 import React from 'react';
 
-
+// Component responsible for control sidebar menu
 export class SidebarMenu extends React.Component {
     
     constructor(props) {
         super(props);
         this.onClick = this.onClick.bind(this);
     }
-
 
     onClick(e) {
         this.props.onClick(e);

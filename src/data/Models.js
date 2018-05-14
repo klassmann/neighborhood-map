@@ -2,6 +2,7 @@
 
 import { getDetail as fsDetail } from '../providers/Foursquare';
 
+// Model for Category
 export class PlaceCategory {
     constructor(key, title, icon) {
         this.key = key;
@@ -10,6 +11,8 @@ export class PlaceCategory {
     }
 }
 
+
+// Model for Place
 export class Place {
     constructor(key, title, lat, lng, type, foursquare_id) {
         this.key = key;
@@ -24,10 +27,6 @@ export class Place {
 
     getDetail() {
         return fsDetail(this.foursquare_id);
-        // .then((response) => {
-        //     this.detail = response;
-        // });
-        // return this.detail;
     }
 }
 

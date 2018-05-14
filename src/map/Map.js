@@ -4,7 +4,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { customMapStyle } from './MapStyle';
 
-
+// Main component for Map
+// It receives the google api object by props
 export class Map extends React.Component {
 
     constructor(props) {

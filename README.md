@@ -10,7 +10,7 @@
 <a name="about"></a>
 ![Screenshot](screenshot.png)
 ## About
-This project shows a map of a neighborhood and its sights that I want to visit. The main goal is build a mashup of google maps and other services, providing a useful map and information about the place.
+This project shows a map of a neighborhood and its sights that I want to visit. The main goal is building a mashup between google maps and other services like foursquare, providing a useful map and information about the place.
 
 <a name="features"></a>
 ## Features
@@ -52,7 +52,7 @@ I used some scripts from the tutorial, I copy them from this [Gist](https://gist
   - [GoogleAPIComponent.js](https://gist.github.com/auser/1d55aa3897f15d17caf21dc39b85b663#file-googleapicomponent-js)
   - [ScriptCache.js](https://gist.github.com/auser/1d55aa3897f15d17caf21dc39b85b663#file-scriptcache-js)
 
-There is a complete project on [Github](https://github.com/fullstackreact/google-maps-react), but I am using only the basic scripts. There are other components that a write following the instructions from the tutorial, I change for my purposes.
+There is a complete project on [Github](https://github.com/fullstackreact/google-maps-react), but I am using only the basic scripts. There are other components that a write following the instructions from the tutorial and I changed for my purposes.
 
 I used this scripts and references because I am not advanced in *React* and I needed to follow some instructions to help me to understand how to load the *Google API* and *React* and how to use third-party components with *React*.
 

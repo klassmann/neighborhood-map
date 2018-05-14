@@ -9,6 +9,7 @@ import SidebarMenu from './ui/SidebarMenu';
 import { PLACES } from './data/Data';
 import { CATEGORIES } from './data/Data';
 
+// Main component for Application
 class App extends Component {
 
   constructor(props) {

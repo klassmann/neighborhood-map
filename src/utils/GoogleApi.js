@@ -1,6 +1,8 @@
 // Author: https://github.com/auser
 // https://gist.github.com/auser/1d55aa3897f15d17caf21dc39b85b663#file-googleapi-js
 
+
+// Responsible for generate the Google API url
 export const GoogleApi = function(opts) {
     opts = opts || {}
   

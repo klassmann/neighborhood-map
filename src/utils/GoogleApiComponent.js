@@ -7,6 +7,7 @@ import GoogleApi from './GoogleApi';
 
 // const defaultMapConfig = {}
 
+// Responsible for Wrapping a component with scriptcache
 export const wrapper = (options) => (WrappedComponent) => {
   const apiKey = options.apiKey;
   const libraries = options.libraries || [];

@@ -2,6 +2,7 @@
 
 import React from 'react';
 
+// Responsible for controlling InfoWindow of a Marker
 export class InfoWindow extends React.Component {
 
     constructor(props) {
@@ -12,7 +13,8 @@ export class InfoWindow extends React.Component {
             twitter: '',
             url: '',
             phone: '',
-            phoneFormatted: ''
+            phoneFormatted: '',
+            foursquareLoaded: false
         }
     }
 
@@ -47,8 +49,11 @@ export class InfoWindow extends React.Component {
                 url: url,
                 phone: phone,
                 formattedPhone: formattedPhone,
-                photo: photoUrl
+                photo: photoUrl,
+                foursquareLoaded: true
             });
+        }).catch(() => {
+            console.log('Error on access foursquare API');
         });
     }
 
@@ -86,6 +91,7 @@ export class InfoWindow extends React.Component {
         let { facebook } = this.state;
         let { instagram } = this.state;
         let { url } = this.state;
+        let { foursquareLoaded } = this.state;
         // let { phone } = this.state;
         // let { formattedPhone } = this.state;
         let { photo } = this.state;
@@ -134,10 +140,15 @@ export class InfoWindow extends React.Component {
 
         template += socialContainer;
 
+        if (foursquareLoaded) {
+            template += `<p class="iw-powered">Powered by <a target="_blank" href="https://foursquare.com/">Foursquare</a>.</p>`
+        } else {
+            template += `<p class="iw-powered">The information is provided by Neighborhood database.</p>`
+        }
+
         var templateContainer = `
         <div class="iw-container">
             ${template}
-            <p class="iw-powered">Powered by <a target="_blank" href="https://foursquare.com/">Foursquare</a>.</p>
         </div>
         `;
 

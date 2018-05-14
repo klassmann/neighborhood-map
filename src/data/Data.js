@@ -3,6 +3,8 @@
 import { Place } from './Models';
 import { PlaceCategory } from './Models';
 
+// These are the initial data of places
+// If foursquare API does not work, they will show only these information.
 
 const Restaurant = new PlaceCategory('restaurant', 'Restaurants', 'fa-utensils');
 const Mall = new PlaceCategory('mall', 'Malls', 'fa-shopping-cart');

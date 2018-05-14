@@ -12,6 +12,8 @@ const defaultMarkerIcon = {
     strokeWeight: 0.4,
 };
 
+// Responsible for controlling Maker on Map
+// It receives the map and google api objects by props
 export class Marker extends React.Component {
 
     constructor(props) {

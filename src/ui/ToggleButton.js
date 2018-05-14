@@ -2,6 +2,7 @@
 
 import React from 'react';
 
+// Responsible for controlling Toggle Button
 export class ToggleButton extends React.Component {
     constructor(props) {
         super(props);

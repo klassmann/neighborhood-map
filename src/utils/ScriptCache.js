@@ -4,6 +4,7 @@
 let counter = 0;
 let scriptMap = new Map();
 
+// Responsible for loading dynamic the script tag
 export const ScriptCache = (function(global) {
   return function ScriptCache (scripts) {
     const Cache = {}

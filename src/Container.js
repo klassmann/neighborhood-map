@@ -5,6 +5,8 @@ import { Map } from './map/Map';
 import GoogleApiComponent from './utils/GoogleApiComponent';
 import Marker from './map/Marker';
 
+// Container is wrapped with GoogleApiComponent 
+// for load scripts of Google Api
 export class Container extends React.Component {
 
     renderMarkers() {
