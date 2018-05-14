@@ -14,7 +14,8 @@ This project shows a map of a neighborhood and its sights that I want to visit. 
 
 <a name="features"></a>
 ## Features
-- [x] Google Maps
+- [x] Google Maps API
+- [x] Foursquare API
 - [x] React
 
 <a name="requirements"></a>
