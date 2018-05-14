@@ -20,9 +20,9 @@ This project shows a map of a neighborhood and its sights that I want to visit. 
 
 <a name="requirements"></a>
 ## Requirements
-- Yarn
-- NPM
-- NodeJS
+- [Yarn](https://yarnpkg.com/en/)
+- [NPM/nodejs](https://nodejs.org/en/) (tested on Node v9.5.0)
+- [serve](https://github.com/zeit/serve) for testing production.
 
 <a name="usage"></a>
 ## Usage
@@ -40,6 +40,18 @@ npm install
 Start the local server, It will open the browser automatically.
 ```bash
 yarn start
+```
+
+### Testing Production Version
+
+You need build before.
+```bash
+yarn build
+```
+
+And run the build.
+```bash
+serve -s build
 ```
 
 <a name="important-notes"></a>
