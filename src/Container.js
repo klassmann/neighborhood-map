@@ -43,7 +43,8 @@ export class Container extends React.Component {
             );
         }
 
-        let centerMap = { lat: 45.4141736, lng: -75.6952438 };
+        // Focus in the middle of places -- Tosca Restaurant
+        let centerMap = { lat: 45.418880828620146, lng: -75.69674170798635 };
 
         return (
             <Map style={style} centerMap={centerMap} google={this.props.google}>

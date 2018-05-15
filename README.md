@@ -42,7 +42,7 @@ Start the local server, It will open the browser automatically.
 yarn start
 ```
 
-### Testing Production Version
+### Testing Production Version (with ServiceWorker support)
 
 You need build before.
 ```bash
