@@ -9,6 +9,21 @@ import Marker from './map/Marker';
 // for load scripts of Google Api
 export class Container extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.onMarkerClick = this.onMarkerClick.bind(this);
+    }
+
+    showInfoWindow(item) {
+        if (this.props.selectedPlace === null)
+            return false;
+        return this.props.selectedPlace.key === item.key;
+    }
+
+    onMarkerClick(place) {
+        this.props.onSelectPlace(place);
+    }
+
     renderMarkers() {
         return this.props.places.map((item, index) => {
             return <Marker 
@@ -16,7 +31,10 @@ export class Container extends React.Component {
                 title={item.title} 
                 lat={item.lat} 
                 lng={item.lng}
-                place={item} />
+                place={item}
+                showInfoWindow={this.showInfoWindow(item)} 
+                onMarkerClick={this.onMarkerClick}
+                />
         });
     }
 

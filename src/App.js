@@ -18,9 +18,11 @@ class App extends Component {
     this.onCategoryToggleOff = this.onCategoryToggleOff.bind(this);
     this.onPlaceToggleOn = this.onPlaceToggleOn.bind(this);
     this.onPlaceToggleOff = this.onPlaceToggleOff.bind(this);
+    this.onSelectPlace = this.onSelectPlace.bind(this);
 
     this.state = { 
       searchValue: '',
+      selectedPlace: null,
       showSideBar: false,
       places: PLACES,
       filterPlaces: [],
@@ -155,6 +157,12 @@ class App extends Component {
     return cls + " closed";
   }
 
+  onSelectPlace(place) {
+    this.setState({
+      selectedPlace: place
+    });
+  }
+
   render() {
     return (
       <div>
@@ -171,7 +179,11 @@ class App extends Component {
           <div className="sb-caption">Places</div>
           {this.renderPlacesFilter()}
         </div>
-        <MapContainer places={this.state.places} />
+        <MapContainer 
+          places={this.state.places}
+          selectedPlace={this.state.selectedPlace} 
+          onSelectPlace={this.onSelectPlace}
+          />
       </div>
     );
   }
