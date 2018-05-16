@@ -34,6 +34,7 @@ export class Container extends React.Component {
                 place={item}
                 showInfoWindow={this.showInfoWindow(item)} 
                 onMarkerClick={this.onMarkerClick}
+                onInfowindowClose={() => { this.props.onInfowindowClose(item) }}
                 />
         });
     }

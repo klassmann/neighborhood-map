@@ -19,6 +19,7 @@ class App extends Component {
     this.onPlaceToggleOn = this.onPlaceToggleOn.bind(this);
     this.onPlaceToggleOff = this.onPlaceToggleOff.bind(this);
     this.onSelectPlace = this.onSelectPlace.bind(this);
+    this.onInfowindowClose = this.onInfowindowClose.bind(this);
 
     this.state = { 
       searchValue: '',
@@ -35,21 +36,16 @@ class App extends Component {
       this.updatePlacesByCategories();
     }
 
-    if (prevState.filterPlaces.length !== this.state.filterPlaces.length) {
+    if (prevState.selectedPlace !== this.state.selectedPlace) {
       this.updatePlacesByPlaces();
     }
   }
 
   updatePlacesByPlaces() {
-    if (this.state.filterPlaces.length === 0) {
+    if (this.state.selectedPlace === null) {
       this.setState({ places: this.getPlacesByCategory() });
       return;
     }
-
-    let places = PLACES.filter((item) => {
-      return this.state.filterPlaces.includes(item.key);
-    });
-    this.setState({ places: places });
   }
 
   getPlacesByCategory() {
@@ -73,17 +69,12 @@ class App extends Component {
   }
 
   addPlaceToFilter(value) {
-    var currentFilter = this.state.filterPlaces;
-    currentFilter.push(value);
-    this.setState({ filterPlaces: currentFilter });
+    this.setState({ selectedPlace: value });
   }
 
   removePlaceFromFilter(value) {
-    var currentFilter = this.state.filterPlaces;
     this.setState({
-      filterPlaces: currentFilter.filter((item) => {
-        return item !== value;
-      })
+      selectedPlace: null
     });
   }
 
@@ -104,7 +95,6 @@ class App extends Component {
 
   onPlaceToggleOn(value) {
     this.addPlaceToFilter(value);
-    this.updatePlacesByPlaces();
   }
 
   onPlaceToggleOff(value) {
@@ -120,13 +110,21 @@ class App extends Component {
     this.removeCategoryFromFilter(value);
   }
 
+  placeIsSelected(item) {
+    if (this.state.selectedPlace === null)
+      return false;
+    return this.state.selectedPlace.key === item.key;
+  }
+
   renderPlacesFilter() {
     return this.getPlacesByCategory().map((item, index) => {
       return <ToggleButton
         key={item.key}
         onToggleOn={this.onPlaceToggleOn} 
-        onToggleOff={this.onPlaceToggleOff} 
-        id={item.key}
+        onToggleOff={this.onPlaceToggleOff}
+        toggleStateManagedByParent={true}
+        toggled={this.placeIsSelected(item)} 
+        id={item}
         icon={item.icon} 
         text={item.title} />
     });
@@ -137,7 +135,8 @@ class App extends Component {
       return <ToggleButton
         key={item.key}
         onToggleOn={this.onCategoryToggleOn} 
-        onToggleOff={this.onCategoryToggleOff} 
+        onToggleOff={this.onCategoryToggleOff}
+        toggleStateManagedByParent={false} 
         id={item.key} 
         icon={item.icon} 
         text={item.title} />
@@ -163,6 +162,12 @@ class App extends Component {
     });
   }
 
+  onInfowindowClose(place) {
+    this.setState({
+      selectedPlace: null
+    });
+  }
+
   render() {
     return (
       <div>
@@ -183,6 +188,7 @@ class App extends Component {
           places={this.state.places}
           selectedPlace={this.state.selectedPlace} 
           onSelectPlace={this.onSelectPlace}
+          onInfowindowClose={this.onInfowindowClose}
           />
       </div>
     );
