@@ -12,6 +12,10 @@
 ## About
 This project shows a map of a neighborhood and its sights that I want to visit. The main goal is building a mashup between google maps and other services like foursquare, providing a useful map and information about the place.
 
+**Note: The client secrets and ids changed.**
+If you clone this repository create your own ids and secrets at [Google](https://console.developers.google.com/apis/credentials) and [Foursquare](https://developer.foursquare.com/).
+
+
 <a name="features"></a>
 ## Features
 - [x] Google Maps API

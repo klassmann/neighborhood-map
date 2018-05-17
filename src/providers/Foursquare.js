@@ -3,8 +3,8 @@
 
 
 const URL = 'https://api.foursquare.com/v2/';
-const CLIENT_ID = '2W4RQXDZQKCQPKKZ1TSAU2V5FR5HDCIJ1UWEDIQW5E1MFJGP';
-const CLIENT_SECRET = 'MTWIJOF2XGMSIQEBMKBXWCRLXDEJJ2OZR55Q2UZO50GBX31I';
+const CLIENT_ID = '';
+const CLIENT_SECRET = '';
 
 const headers = {
     'Accept': 'application/json',
